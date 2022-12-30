@@ -1,0 +1,542 @@
+{
+    "version": "3.15.0",
+    "mode": "tabbed_interface",
+    "dev_mode": false,
+    "components": [
+        {
+            "id": 25,
+            "type": "tabs",
+            "props": {
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 26,
+            "type": "tabitem",
+            "props": {
+                "label": "draw",
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 5,
+            "type": "row",
+            "props": {
+                "type": "row",
+                "variant": "default",
+                "visible": true,
+                "style": {
+                    "equal_height": false
+                }
+            }
+        },
+        {
+            "id": 6,
+            "type": "column",
+            "props": {
+                "type": "column",
+                "variant": "panel",
+                "scale": 1,
+                "min_width": 320,
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 7,
+            "type": "column",
+            "props": {
+                "type": "column",
+                "variant": "default",
+                "scale": 1,
+                "min_width": 320,
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 0,
+            "type": "image",
+            "props": {
+                "image_mode": "L",
+                "shape": [
+                    28,
+                    28
+                ],
+                "source": "canvas",
+                "tool": "sketch",
+                "streaming": false,
+                "mirror_webcam": true,
+                "label": "data",
+                "show_label": true,
+                "interactive": true,
+                "name": "image",
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 8,
+            "type": "row",
+            "props": {
+                "type": "row",
+                "variant": "default",
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 9,
+            "type": "button",
+            "props": {
+                "value": "Clear",
+                "variant": "secondary",
+                "name": "button",
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 10,
+            "type": "button",
+            "props": {
+                "value": "Submit",
+                "variant": "primary",
+                "name": "button",
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 11,
+            "type": "column",
+            "props": {
+                "type": "column",
+                "variant": "panel",
+                "scale": 1,
+                "min_width": 320,
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 1,
+            "type": "label",
+            "props": {
+                "label": "output",
+                "show_label": true,
+                "interactive": false,
+                "name": "label",
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 12,
+            "type": "row",
+            "props": {
+                "type": "row",
+                "variant": "default",
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 13,
+            "type": "button",
+            "props": {
+                "value": "Flag",
+                "variant": "secondary",
+                "name": "button",
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 27,
+            "type": "tabitem",
+            "props": {
+                "label": "upload_bin_file",
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 15,
+            "type": "row",
+            "props": {
+                "type": "row",
+                "variant": "default",
+                "visible": true,
+                "style": {
+                    "equal_height": false
+                }
+            }
+        },
+        {
+            "id": 16,
+            "type": "column",
+            "props": {
+                "type": "column",
+                "variant": "panel",
+                "scale": 1,
+                "min_width": 320,
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 17,
+            "type": "column",
+            "props": {
+                "type": "column",
+                "variant": "default",
+                "scale": 1,
+                "min_width": 320,
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 2,
+            "type": "file",
+            "props": {
+                "file_count": "single",
+                "label": "file",
+                "show_label": true,
+                "name": "file",
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 18,
+            "type": "row",
+            "props": {
+                "type": "row",
+                "variant": "default",
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 19,
+            "type": "button",
+            "props": {
+                "value": "Clear",
+                "variant": "secondary",
+                "name": "button",
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 20,
+            "type": "button",
+            "props": {
+                "value": "Submit",
+                "variant": "primary",
+                "name": "button",
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 21,
+            "type": "column",
+            "props": {
+                "type": "column",
+                "variant": "panel",
+                "scale": 1,
+                "min_width": 320,
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 3,
+            "type": "label",
+            "props": {
+                "label": "output",
+                "show_label": true,
+                "interactive": false,
+                "name": "label",
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 22,
+            "type": "row",
+            "props": {
+                "type": "row",
+                "variant": "default",
+                "visible": true,
+                "style": {}
+            }
+        },
+        {
+            "id": 23,
+            "type": "button",
+            "props": {
+                "value": "Flag",
+                "variant": "secondary",
+                "name": "button",
+                "visible": true,
+                "style": {}
+            }
+        }
+    ],
+    "theme": "default",
+    "css": null,
+    "title": "Gradio",
+    "is_space": false,
+    "enable_queue": false,
+    "show_error": false,
+    "show_api": true,
+    "is_colab": false,
+    "layout": {
+        "id": 24,
+        "children": [
+            {
+                "id": 25,
+                "children": [
+                    {
+                        "id": 26,
+                        "children": [
+                            {
+                                "id": 5,
+                                "children": [
+                                    {
+                                        "id": 6,
+                                        "children": [
+                                            {
+                                                "id": 7,
+                                                "children": [
+                                                    {
+                                                        "id": 0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": 8,
+                                                "children": [
+                                                    {
+                                                        "id": 9
+                                                    },
+                                                    {
+                                                        "id": 10
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": 11,
+                                        "children": [
+                                            {
+                                                "id": 1
+                                            },
+                                            {
+                                                "id": 12,
+                                                "children": [
+                                                    {
+                                                        "id": 13
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 27,
+                        "children": [
+                            {
+                                "id": 15,
+                                "children": [
+                                    {
+                                        "id": 16,
+                                        "children": [
+                                            {
+                                                "id": 17,
+                                                "children": [
+                                                    {
+                                                        "id": 2
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": 18,
+                                                "children": [
+                                                    {
+                                                        "id": 19
+                                                    },
+                                                    {
+                                                        "id": 20
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": 21,
+                                        "children": [
+                                            {
+                                                "id": 3
+                                            },
+                                            {
+                                                "id": 22,
+                                                "children": [
+                                                    {
+                                                        "id": 23
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "dependencies": [
+        {
+            "targets": [
+                10
+            ],
+            "trigger": "click",
+            "inputs": [
+                0
+            ],
+            "outputs": [
+                1
+            ],
+            "backend_fn": true,
+            "js": null,
+            "queue": null,
+            "api_name": "predict",
+            "scroll_to_output": true,
+            "show_progress": true,
+            "every": null,
+            "batch": false,
+            "max_batch_size": 4,
+            "cancels": []
+        },
+        {
+            "targets": [
+                9
+            ],
+            "trigger": "click",
+            "inputs": [],
+            "outputs": [
+                0,
+                1,
+                7
+            ],
+            "backend_fn": false,
+            "js": "() => [null, null, {\"variant\": null, \"visible\": true, \"__type__\": \"update\"}]\n                ",
+            "queue": false,
+            "api_name": null,
+            "scroll_to_output": false,
+            "show_progress": true,
+            "every": null,
+            "batch": false,
+            "max_batch_size": 4,
+            "cancels": []
+        },
+        {
+            "targets": [
+                13
+            ],
+            "trigger": "click",
+            "inputs": [
+                0,
+                1
+            ],
+            "outputs": [],
+            "backend_fn": true,
+            "js": null,
+            "queue": false,
+            "api_name": null,
+            "scroll_to_output": false,
+            "show_progress": true,
+            "every": null,
+            "batch": false,
+            "max_batch_size": 4,
+            "cancels": []
+        },
+        {
+            "targets": [
+                20
+            ],
+            "trigger": "click",
+            "inputs": [
+                2
+            ],
+            "outputs": [
+                3
+            ],
+            "backend_fn": true,
+            "js": null,
+            "queue": null,
+            "api_name": "predict_1",
+            "scroll_to_output": true,
+            "show_progress": true,
+            "every": null,
+            "batch": false,
+            "max_batch_size": 4,
+            "cancels": []
+        },
+        {
+            "targets": [
+                19
+            ],
+            "trigger": "click",
+            "inputs": [],
+            "outputs": [
+                2,
+                3,
+                17
+            ],
+            "backend_fn": false,
+            "js": "() => [null, null, {\"variant\": null, \"visible\": true, \"__type__\": \"update\"}]\n                ",
+            "queue": false,
+            "api_name": null,
+            "scroll_to_output": false,
+            "show_progress": true,
+            "every": null,
+            "batch": false,
+            "max_batch_size": 4,
+            "cancels": []
+        },
+        {
+            "targets": [
+                23
+            ],
+            "trigger": "click",
+            "inputs": [
+                2,
+                3
+            ],
+            "outputs": [],
+            "backend_fn": true,
+            "js": null,
+            "queue": false,
+            "api_name": null,
+            "scroll_to_output": false,
+            "show_progress": true,
+            "every": null,
+            "batch": false,
+            "max_batch_size": 4,
+            "cancels": []
+        }
+    ]
+}

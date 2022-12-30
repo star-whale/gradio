@@ -1,0 +1,99 @@
+Arguments: 
+  /home/z/.nvm/versions/node/v16.15.0/bin/node /home/z/.nvm/versions/node/v16.15.0/bin/yarn install
+
+PATH: 
+  /home/z/.local/bin:/opt/miniconda3/bin:/opt/miniconda3/condabin:/home/z/.pyenv/plugins/pyenv-virtualenv/shims:/home/z/.pyenv/shims:/home/z/.pyenv/bin:/home/z/.gvm/bin:/opt/apache-maven-3.8.6/bin:/home/z/.autojump/bin:/home/z/.nvm/versions/node/v16.15.0/bin:/home/z/.autojump/bin:/home/z/.vscode-server/bin/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/ImageMagick-7.0.1-Q16:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0:/mnt/c/WINDOWS/System32/OpenSSH:/mnt/c/Program Files (x86)/NetSarang/Xshell 7:/mnt/c/Program Files/WireGuard:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Users/liuweizhan/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/liuweizhan/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/JetBrains/IntelliJ IDEA 2021.3.3/bin:/home/z/.local/bin:.:/home/z/.fzf/bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  16.15.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.npmmirror.com/@gradio%2ftootils: [NOT_FOUND] @gradio/tootils not found
+      at Request.params.callback [as _callback] (/home/z/.nvm/versions/node/v16.15.0/lib/node_modules/yarn/lib/cli.js:66138:18)
+      at Request.self.callback (/home/z/.nvm/versions/node/v16.15.0/lib/node_modules/yarn/lib/cli.js:140883:22)
+      at Request.emit (node:events:527:28)
+      at Request.<anonymous> (/home/z/.nvm/versions/node/v16.15.0/lib/node_modules/yarn/lib/cli.js:141855:10)
+      at Request.emit (node:events:527:28)
+      at Gunzip.<anonymous> (/home/z/.nvm/versions/node/v16.15.0/lib/node_modules/yarn/lib/cli.js:141777:12)
+      at Object.onceWrapper (node:events:641:28)
+      at Gunzip.emit (node:events:527:28)
+      at endReadableNT (node:internal/streams/readable:1345:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+  	"name": "gradio-ui",
+  	"version": "0.0.1",
+  	"description": "Gradio UI packages",
+  	"scripts": {
+  		"workbench": "pnpm --filter @gradio/workbench dev",
+  		"dev": "pnpm --filter @gradio/app dev",
+  		"build": "pnpm --filter @gradio/app build:local --emptyOutDir",
+  		"build:cdn": "pnpm --filter @gradio/app build:cdn --emptyOutDir",
+  		"build:website": "pnpm --filter @gradio/app build:website --emptyOutDir",
+  		"build:cdn-local": "TEST_CDN=TRUE pnpm build:cdn",
+  		"preview:cdn-server": "sirv ../gradio/templates/cdn --single --port=4321 --cors",
+  		"preview:cdn-app": "pnpm --filter @gradio/cdn-test dev",
+  		"preview:cdn-local": "run-p preview:cdn-server preview:cdn-app",
+  		"format:check": "prettier --check --plugin-search-dir=. .",
+  		"format:write": "prettier --write --plugin-search-dir=. .",
+  		"ts:check": "svelte-check --tsconfig tsconfig.json",
+  		"test": "vitest dev",
+  		"test:run": "vitest run",
+  		"test:browser": "pnpm --filter @gradio/app test:browser:full",
+  		"test:browser:full": "run-s build test:browser",
+  		"test:browser:debug": "pnpm --filter @gradio/app test:browser:debug"
+  	},
+  	"type": "module",
+  	"author": "",
+  	"license": "ISC",
+  	"private": true,
+  	"dependencies": {
+  		"@gradio/tootils": "workspace:^0.0.1",
+  		"@playwright/test": "^1.27.1",
+  		"@sveltejs/vite-plugin-svelte": "^1.0.0-next.44",
+  		"@tailwindcss/forms": "^0.5.0",
+  		"@testing-library/dom": "^8.11.3",
+  		"@testing-library/svelte": "^3.1.0",
+  		"@testing-library/user-event": "^13.5.0",
+  		"autoprefixer": "^10.4.4",
+  		"babylonjs": "^5.17.1",
+  		"babylonjs-loaders": "^5.17.1",
+  		"happy-dom": "^2.49.0",
+  		"node-html-parser": "^5.3.3",
+  		"npm-run-all": "^4.1.5",
+  		"playwright": "^1.27.1",
+  		"plotly.js-dist-min": "^2.10.1",
+  		"polka": "^1.0.0-next.22",
+  		"postcss": "^8.4.5",
+  		"postcss-nested": "^5.0.6",
+  		"prettier": "^2.6.2",
+  		"prettier-plugin-svelte": "^2.7.0",
+  		"sirv": "^2.0.2",
+  		"sirv-cli": "^2.0.2",
+  		"svelte": "^3.49.0",
+  		"svelte-check": "^2.8.0",
+  		"svelte-i18n": "^3.3.13",
+  		"svelte-preprocess": "^4.10.6",
+  		"tailwindcss": "^3.1.6",
+  		"tinyspy": "^0.3.0",
+  		"typescript": "^4.7.4",
+  		"vite": "^2.9.5",
+  		"vitest": "^0.12.7"
+  	},
+  	"devDependencies": {
+  		"@types/three": "^0.138.0"
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

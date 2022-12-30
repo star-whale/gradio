@@ -429,7 +429,7 @@
 	<footer
 		class="flex justify-center pb-6 text-gray-400 space-x-2 text-sm md:text-base"
 	>
-		{#if show_api}
+		<!-- {#if show_api}
 			<button
 				on:click={() => {
 					set_api_docs_visible(!api_docs_visible);
@@ -448,7 +448,7 @@
 		>
 			Built with Gradio
 			<img class="w-2.5 md:w-3 mx-1" src={logo} alt="logo" />
-		</a>
+		</a> -->
 	</footer>
 </div>
 
