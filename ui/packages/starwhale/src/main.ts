@@ -6,7 +6,7 @@ import Blocks from "@gradio/app/Blocks.svelte";
 import Login from "@gradio/app/Login.svelte";
 import { Component as Loader } from "@gradio/app/components/StatusTracker";
 import { fn } from "@gradio/app/api";
-import config from "./config.json";
+// import config from "./config.json";
 
 import type {
 	ComponentMeta,
@@ -23,6 +23,7 @@ declare let BACKEND_URL: string;
 declare let BUILD_MODE: string;
 
 const ENTRY_CSS = "__ENTRY_CSS__";
+// const ENTRY_CSS = "http://127.0.0.1:8080/style.css";
 const FONTS = "__FONTS_CSS__";
 
 interface Config {
@@ -68,21 +69,22 @@ async function get_source_config(source: string): Promise<Config> {
 }
 
 async function get_config(source: string | null) {
-	if (BUILD_MODE === "dev" || location.origin === "http://localhost:3000") {
-		// let config = await fetch(BACKEND_URL + "config");
-		// const result = await config.json();
+	return window.gradio_config;
+	// if (BUILD_MODE === "dev" || location.origin === "http://localhost:3000") {
+	// 	// let config = await fetch(BACKEND_URL + "config");
+	// 	// const result = await config.json();
 
-		const result = config;
-		return result;
-	} else if (source) {
-		if (!source.endsWith("/")) {
-			source += "/";
-		}
-		const config = await get_source_config(source);
-		return config;
-	} else {
-		return window.gradio_config;
-	}
+	// 	const result = config;
+	// 	return result;
+	// } else if (source) {
+	// 	if (!source.endsWith("/")) {
+	// 		source += "/";
+	// 	}
+	// 	// const config = await get_source_config(source);
+	// 	return config;
+	// } else {
+	// 	return window.gradio_config;
+	// }
 }
 
 function mount_custom_css(
@@ -133,17 +135,19 @@ async function handle_config(
 		return null;
 	}
 
-	mount_custom_css(target, config.css);
-	window.__is_colab__ = config.is_colab;
+	if (config) {
+		mount_custom_css(target, config.css);
+		window.__is_colab__ = config.is_colab;
 
-	if (config.root === undefined) {
-		config.root = BACKEND_URL;
-	}
-	if (config.dev_mode) {
-		reload_check(config.root);
-	}
+		if (config.root === undefined) {
+			config.root = BACKEND_URL;
+		}
+		if (config.dev_mode) {
+			reload_check(config.root);
+		}
 
-	config.target = target;
+		config.target = target;
+	}
 
 	return config;
 }
@@ -197,7 +201,7 @@ function mount_app(
 
 function create_custom_element() {
 	//@ts-ignore
-	Array.isArray(FONTS) && FONTS.map((f) => mount_css(f, document.head));
+	// Array.isArray(FONTS) && FONTS.map((f) => mount_css(f, document.head));
 
 	class GradioApp extends HTMLElement {
 		root: ShadowRoot;
@@ -274,7 +278,8 @@ function create_custom_element() {
 
 			this.wrapper.style.minHeight = initial_height || "300px";
 
-			const config = await handle_config(this.root, source);
+			const config = await handle_config(this.root, null);
+
 			if (config === null) {
 				this.wrapper.remove();
 			} else {
@@ -295,6 +300,7 @@ function create_custom_element() {
 		}
 	}
 
+	console.log("defining gradio-app");
 	customElements.define("gradio-app", GradioApp);
 }
 
@@ -315,7 +321,9 @@ async function unscoped_mount() {
 		}
 	});
 
-	const config = await handle_config(target, null);
+	const source = target.getAttribute("data-config");
+	console.log("unscoped_mount", source);
+	const config = await handle_config(target, source);
 	mount_app({ ...config, control_page_title: true }, false, target, 0);
 }
 
@@ -374,9 +382,7 @@ if (BUILD_MODE === "dev" || window.location !== window.parent.location) {
 	window.scoped_css_attach = (link) => {
 		document.head.append(link);
 	};
-	// unscoped_mount();
+	unscoped_mount();
 } else {
 	create_custom_element();
 }
-
-export default create_custom_element;

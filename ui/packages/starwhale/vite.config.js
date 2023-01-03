@@ -7,7 +7,7 @@ import {
 	patch_dynamic_import,
 	generate_cdn_entry,
 	handle_ce_css
-} from "../app/build_plugins";
+} from "./build_plugins";
 import path from "path";
 
 // this is dupe config, gonna try fix this

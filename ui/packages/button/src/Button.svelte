@@ -6,7 +6,7 @@
 	export let elem_id: string = "";
 	export let visible: boolean = true;
 	export let variant: "primary" | "secondary" | "stop" = "secondary";
-	export let size: "sm" | "lg" = "lg";
+	export let size: "sm" | "lg" = "sm";
 
 	$: ({ classes } = get_styles(style, ["full_width"]));
 </script>
