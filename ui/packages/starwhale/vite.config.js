@@ -49,7 +49,7 @@ export default defineConfig(({ mode }) => {
 			BUILD_MODE: production ? JSON.stringify("prod") : JSON.stringify("dev"),
 			BACKEND_URL: production
 				? JSON.stringify("")
-				: JSON.stringify("http://localhost:7860/")
+				: JSON.stringify("http://localhost:5173/")
 		},
 		css: {
 			postcss: {

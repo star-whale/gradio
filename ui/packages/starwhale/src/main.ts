@@ -59,7 +59,7 @@ async function reload_check(root: string) {
 		location.reload();
 	}
 
-	setTimeout(() => reload_check(root), 250);
+	// setTimeout(() => reload_check(root), 250);
 }
 
 async function get_source_config(source: string): Promise<Config> {

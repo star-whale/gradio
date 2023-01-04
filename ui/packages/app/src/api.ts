@@ -98,12 +98,21 @@ export const fn =
 		const fn_index = payload.fn_index;
 
 		payload.session_hash = session_hash;
+
 		if (frontend_fn !== undefined) {
 			payload.data = await frontend_fn(payload.data.concat(output_data));
 		}
 		if (backend_fn == false) {
 			return payload;
 		}
+		// @SW hard coded for now
+		const api_endpoint = window.gradio_config.root;
+		console.log(
+			window.gradio_config,
+			"-----",
+			api_endpoint + action + "/",
+			payload
+		);
 
 		if (queue && ["predict", "interpret"].includes(action)) {
 			loading_status.update(
