@@ -23,7 +23,7 @@ declare let BACKEND_URL: string;
 declare let BUILD_MODE: string;
 
 const ENTRY_CSS = "__ENTRY_CSS__";
-// const ENTRY_CSS = "http://127.0.0.1:8080/style.css";
+// build by vite lib mode , style.css must be inject persionally
 const FONTS = "__FONTS_CSS__";
 
 interface Config {
@@ -126,8 +126,8 @@ async function handle_config(
 
 	try {
 		let [_config] = await Promise.all([
-			get_config(source),
-			BUILD_MODE === "dev" ? Promise.resolve : mount_css(ENTRY_CSS, target)
+			get_config(source)
+			// BUILD_MODE === "dev" ? Promise.resolve : mount_css(ENTRY_CSS, target)
 		]);
 		config = _config;
 	} catch (e) {
@@ -201,7 +201,7 @@ function mount_app(
 
 function create_custom_element() {
 	//@ts-ignore
-	// Array.isArray(FONTS) && FONTS.map((f) => mount_css(f, document.head));
+	Array.isArray(FONTS) && FONTS.map((f) => mount_css(f, document.head));
 
 	class GradioApp extends HTMLElement {
 		root: ShadowRoot;
@@ -321,9 +321,7 @@ async function unscoped_mount() {
 		}
 	});
 
-	const source = target.getAttribute("data-config");
-	console.log("unscoped_mount", source);
-	const config = await handle_config(target, source);
+	const config = await handle_config(target, null);
 	mount_app({ ...config, control_page_title: true }, false, target, 0);
 }
 

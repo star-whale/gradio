@@ -27,9 +27,9 @@
 
 	export let root: string;
 	export let fn: ReturnType<typeof api_fn>;
-	export let components: Array<ComponentMeta>;
-	export let layout: LayoutNode;
-	export let dependencies: Array<Dependency>;
+	export let components: Array<ComponentMeta> = [];
+	export let layout: LayoutNode = { id: 0, children: [] };
+	export let dependencies: Array<Dependency> = [];
 
 	export let enable_queue: boolean;
 	export let title: string = "Gradio";
@@ -60,6 +60,7 @@
 	const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor;
 	dependencies.forEach((d) => {
 		if (d.js) {
+			// d.js = "async (x) => { console.log('hello from starwhale model'); await wait(); return x; }"
 			try {
 				d.frontend_fn = new AsyncFunction(
 					"__fn_args",
@@ -260,6 +261,7 @@
 					outputs.every((v) => instance_map?.[v].instance) &&
 					inputs.every((v) => instance_map?.[v].instance)
 				) {
+
 					const req = fn({
 						action: "predict",
 						backend_fn,

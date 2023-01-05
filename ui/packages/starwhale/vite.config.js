@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import sveltePreprocess from "svelte-preprocess";
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
 import {
 	inject_ejs,
@@ -36,10 +37,9 @@ export default defineConfig(({ mode }) => {
 		build: {
 			sourcemap: true,
 			// target: "esnext",
-			// minify: production,
+			minify: production,
 			manifest: true,
 			outDir: `build`,
-			minify: false,
 			lib: {
 				entry: "./src/main.ts",
 				formats: ["es"]
@@ -83,6 +83,7 @@ export default defineConfig(({ mode }) => {
 			}),
 			generate_cdn_entry({ enable: is_cdn, cdn_url: CDN_URL }),
 			handle_ce_css()
+			// cssInjectedByJsPlugin({ styleId: "gradio" })
 		],
 		test: {
 			environment: "happy-dom",

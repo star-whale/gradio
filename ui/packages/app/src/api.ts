@@ -107,12 +107,6 @@ export const fn =
 		}
 		// @SW hard coded for now
 		const api_endpoint = window.gradio_config.root;
-		console.log(
-			window.gradio_config,
-			"-----",
-			api_endpoint + action + "/",
-			payload
-		);
 
 		if (queue && ["predict", "interpret"].includes(action)) {
 			loading_status.update(

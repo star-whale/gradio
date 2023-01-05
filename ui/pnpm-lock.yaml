@@ -327,6 +327,7 @@ importers:
       mime-types: ^2.1.34
       svelte: ^3.25.1
       svelte-i18n: ^3.3.13
+      vite-plugin-css-injected-by-js: ^2.2.0
     dependencies:
       '@gradio/atoms': link:../atoms
       '@gradio/audio': link:../audio
@@ -356,6 +357,7 @@ importers:
       mime-types: 2.1.34
       svelte: 3.49.0
       svelte-i18n: 3.3.13_svelte@3.49.0
+      vite-plugin-css-injected-by-js: 2.2.0_vite@2.9.9
 
   packages/table:
     specifiers:
@@ -2155,7 +2157,6 @@ packages:
     resolution: {integrity: sha512-+5FPy5PnwmO3lvfMb0AsoPaBG+5KHUI0wYFXOtYPnVVVspTFUuMZNfNaNVRt3FZadstu2c8x23vykRW/NBoU6A==}
     dependencies:
       has: 1.0.3
-    dev: false
 
   /is-date-object/1.0.5:
     resolution: {integrity: sha512-9YQaSxsAiSwcvS33MBk3wTCVnWK+HhF8VZR2jRxehM16QcVOdHqPn4VPHmRK4lSr38n9JriurInLcP90xsYNfQ==}
@@ -2914,7 +2915,6 @@ packages:
       is-core-module: 2.9.0
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
-    dev: false
 
   /reusify/1.0.4:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
@@ -3960,6 +3960,14 @@ packages:
       - encoding
     dev: false
 
+  /vite-plugin-css-injected-by-js/2.2.0_vite@2.9.9:
+    resolution: {integrity: sha512-SRGuyY1WUHj7cPzv7AIE0bG5Cb+vioxuq3CkFc1j0b8z5Cy3rXLG8SwxjriylFcZAY7tH2jU4i1bsCJRE/ou6g==}
+    peerDependencies:
+      vite: '>2.0.0-0'
+    dependencies:
+      vite: 2.9.9
+    dev: false
+
   /vite/2.9.5:
     resolution: {integrity: sha512-dvMN64X2YEQgSXF1lYabKXw3BbN6e+BL67+P3Vy4MacnY+UzT1AfkHiioFSi9+uiDUiaDy7Ax/LQqivk6orilg==}
     engines: {node: '>=12.2.0'}
@@ -4002,7 +4010,7 @@ packages:
     dependencies:
       esbuild: 0.14.31
       postcss: 8.4.14
-      resolve: 1.22.0
+      resolve: 1.22.1
       rollup: 2.66.1
     optionalDependencies:
       fsevents: 2.3.2
