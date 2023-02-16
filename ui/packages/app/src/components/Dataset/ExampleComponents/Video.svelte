@@ -26,7 +26,7 @@
 		on:mouseover={video.play}
 		on:mouseout={video.pause}
 		class="gr-sample-video"
-		src={samples_dir + value}
+		src={value}
 	/>
 {:else}
 	<div class="gr-sample-video">{value}</div>
