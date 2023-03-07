@@ -60,12 +60,14 @@
 	const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor;
 	dependencies.forEach((d) => {
 		if (d.js) {
-			// d.js = "async (x) => { console.log('hello from starwhale model'); await wait(); return x; }"
+			const wrap = d.backend_fn
+				? d.inputs.length === 1
+				: d.outputs.length === 1;
 			try {
 				d.frontend_fn = new AsyncFunction(
 					"__fn_args",
 					`let result = await (${d.js})(...__fn_args);
-					return ${d.outputs.length} === 1 ? [result] : result;`
+					return ${wrap} ? [result] : result;`
 				);
 			} catch (e) {
 				console.error("Could not parse custom js method.");
